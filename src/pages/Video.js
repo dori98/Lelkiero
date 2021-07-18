@@ -28,7 +28,15 @@ const V = () => {
                             <div >
                                 <div key={video.id} >
                                     <p className={style.videoTitle}>{video.nev}</p>
-                                    <iframe  src={video.link} title="legyen" className={style.videoBox}></iframe>
+                                    <iframe
+                                        src={video.link}
+                                        title="legyen"
+                                        className={style.videoBox}
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        webkitallowfullscreen="true"
+                                        mozallowfullscreen="true"
+                                        allowFullScreen
+                                    />
                                 </div>
                             </div>
 

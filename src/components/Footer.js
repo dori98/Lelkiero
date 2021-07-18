@@ -23,7 +23,7 @@ const Footer = () => {
         allContentfulElerhetoseg:{nodes:elerhetoseg}
     }=data
     return(
-        <section >
+        <footer>
             <div className={style.footerDiv}>
                 {elerhetoseg.map(e => {
                     return(
@@ -37,7 +37,7 @@ const Footer = () => {
                 })}
                 <p className={style.copyrightSize}>Copyright 2021 © Lelkierő</p>
             </div>
-        </section>
+        </footer>
 
     )
 }
