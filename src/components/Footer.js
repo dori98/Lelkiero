@@ -25,7 +25,15 @@ const Footer = () => {
     return(
         <footer>
             <div className={style.footerDiv}>
-                {elerhetoseg.map(e => {
+
+                <p className={style.copyrightSize}>Copyright 2021 © Lelkierő</p>
+            </div>
+        </footer>
+
+    )
+}
+export default Footer
+/*{elerhetoseg.map(e => {
                     return(
                         <div key={e.id} className={style.footerP}>
                             <h2 className={style.footerH2}>{e.nev}</h2>
@@ -34,11 +42,4 @@ const Footer = () => {
                             <p>Rendelési idő:{e.rendelesiIdo}</p>
                         </div>
                     )
-                })}
-                <p className={style.copyrightSize}>Copyright 2021 © Lelkierő</p>
-            </div>
-        </footer>
-
-    )
-}
-export default Footer
+                })}*/

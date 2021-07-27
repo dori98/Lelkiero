@@ -1,19 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');/*1*/
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap'); /*font-family: 'RocknRoll One', sans-serif;2*/
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'); /*font-family: 'Indie Flower', cursive;3*/
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');/*font-family: 'Pacifico', cursive;4*/
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');/*font-family: 'Satisfy', cursive;5*/
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');/*font-family: 'Great Vibes', cursive;6*/
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');/*font-family: 'Pirata One', cursive;7*/
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap'); /*font-family: 'Akaya Kanadaka', cursive;8*/
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');/*font-family: 'Aclonica', sans-serif;9*/
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');/*font-family: 'Fredericka the Great', cursive;10*/
-@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');/*font-family: 'Rye', cursive;11*/
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');/*font-family: 'Nunito', sans-serif;*/
-@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');/*font-family: 'Alegreya', serif;*/
-@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Merienda&display=swap');/*font-family: 'Merienda', cursive;*/
-@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');/*font-family: 'Annie Use Your Telescope', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kurale&family=Oregano&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -40,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
+
 }
 body p{
 
@@ -70,4 +56,8 @@ html,
 
 a{
     text-decoration: none;
+}
+h1{
+    font-family: 'Oregano', cursive;
+
 }

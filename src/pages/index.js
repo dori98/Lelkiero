@@ -33,7 +33,10 @@ const Index = () => {
                     <h1 className={style.indexH1} id="bemutatkozas">Dr. Laczkó Katalin</h1>
                     <h2 className={style.indexH2}>gyermek- és ifjúsági pszichiáter szakorvos, család- és
                         párterapeuta</h2>
-                    <img src={icon} alt="icon" width="200" height="250" className={style.indexImg}/>
+                    <div className={style.indexImg}>
+                        <img src={icon} alt="icon" width="200" height="250" className={style.img}/>
+
+                    </div>
                     <div>
                         {bemutatkozas.map(b => {
                             return (
@@ -50,12 +53,13 @@ const Index = () => {
                 <Arak/>
                 <div id="idoponkeres" className={style.line}/>
                 <Form/>
-                <div id="elerhetoseg" className={style.line}/>
-                <Elerhetoseg/>
+
                 <div id="videok" className={style.line}/>
                 <Video/>
                 <div id="ajanlottirodalom" className={style.line}/>
                 <AjanlottIrodalom/>
+                <div id="elerhetoseg" className={style.line}/>
+                <Elerhetoseg/>
 
             </div>
 

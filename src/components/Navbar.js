@@ -46,7 +46,7 @@ const Navbar = () => {
             <h1 className={style.navbarTitle}>Lelkierő</h1>
             <div className={style.navbarLinks}>
                 <div className={style.menuItem}>
-                    <Link to="#bemutatkozas"><h2 className={style.menuLink}>Főoldal</h2></Link>
+                    <Link to="#bemutatkozas"><h2 className={style.menuLink}>Bemutatkozás</h2></Link>
                 </div>
                 <div className={style.menuItem}>
                     <Link to="#arak"><h2 className={style.menuLink}>Árak</h2></Link>
@@ -54,14 +54,15 @@ const Navbar = () => {
                 <div className={style.menuItem}>
                     <Link to="#idoponkeres"><h2 className={style.menuLink}>Időpontkérés</h2></Link>
                 </div>
-                <div className={style.menuItem}>
-                    <Link to="#elerhetoseg"><h2 className={style.menuLink}>Elérhetőség</h2></Link>
-                </div>
+
                 <div className={style.menuItem}>
                     <Link to="#videok"><h2 className={style.menuLink}>Videók</h2></Link>
                 </div>
                 <div className={style.menuItem}>
                     <Link to="#ajanlottirodalom"><h2 className={style.menuLink}>Ajánlott irodalom</h2></Link>
+                </div>
+                <div className={style.menuItem}>
+                    <Link to="#elerhetoseg"><h2 className={style.menuLink}>Elérhetőség</h2></Link>
                 </div>
             </div>
         </navbar>

@@ -35,38 +35,46 @@ const Ajanlott = () => {
     } = data
 
     return (
-        <div className={style.ajanlottFullPage}>
+        <div >
             <h1 className={styles.indexH1}>Ajánlott irodalmak</h1>
-            <h3 className={style.arakH3}>Bla Bla Bla de kell valami </h3>
-            <h2>Könyvek</h2>
-            <div className={styles.bookDiv}>
+            <h3 className={style.arakH3}>A weboldalakat megtekintheted ha rákattintasz a nevükre BLABLABLA </h3>
+            <div className={style.ajanlottBookWebDiv}>
 
-                {konyv.map(konyv => {
-                    return (
-                        <div>
-                            <div key={konyv.id}>
-                                <Img fluid={konyv.konyvKepe.fluid} className={styles.imageSize}/>
-                                <p>{konyv.cim}</p>
+                <div className={styles.bookDiv}>
+
+                    {konyv.map(konyv => {
+                        return (
+                            <div>
+                                <div key={konyv.id} >
+                                    <Img fluid={konyv.konyvKepe.fluid} className={styles.imageSize}/>
+                                    <p className={style.bookP}>{konyv.cim}</p>
+                                </div>
                             </div>
-                        </div>
 
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
 
-            <h2>Weboldalak</h2>
-            <div>
 
-                {weboldal.map(weboldal => {
-                    return (
-                        <div>
-                            <div key={weboldal.id}>
-                                <a href={weboldal.link}>{weboldal.cim}</a>
+
+            <div className={style.ajanlottBookWebDiv}>
+                <h2 className={style.videoTitle}>Weboldalak</h2>
+
+                <div className={styles.webDiv}>
+
+                    {weboldal.map(weboldal => {
+                        return (
+                            <div>
+                                <div key={weboldal.id}>
+                                    <a href={weboldal.link} className={style.webP}>{weboldal.cim}</a>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
+
         </div>
     )
 }
