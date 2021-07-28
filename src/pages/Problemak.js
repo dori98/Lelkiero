@@ -26,7 +26,7 @@ const Problemak = () => {
                     return(
                         <div className={style.problemBox}>
                             <div key={problema.id} >
-                                <ul>
+                                <ul className={style.problemBoxPosition} >
                                     <li className={style.problemList}>
                                         {problema.problema}
                                     </li>

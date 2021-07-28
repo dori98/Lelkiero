@@ -3,7 +3,7 @@
     --blue-backroundcolor: linear-gradient(120deg, rgba(208,245,241,1) 0%, rgba(8,180,212,1) 98%);
     --blue-buton-hover:linear-gradient(120deg, rgba(208,245,241,0.21726193895526966) 0%, rgba(8,180,212,0.2001751042213761) 98%);
     /*linear-gradient(to right, #b4ebf2, #9ce8f3, #80e5f5, #5ce2f7, #18dffa);*/
-    --navbar-title-font-size: 30px;
+    --navbar-title-font-size: 42px;
     --p-size: 20px;
     --h1: 40px;
     --h2: 25px;
@@ -173,7 +173,9 @@
 .navbar-title{
     font-size: var(--navbar-title-font-size);
     align-self: center;
-    padding-left: 100px;
+    padding-left: 120px;
+    letter-spacing: 4px;
+    color: var(--blue);
 }
 /*___________________________________________________________________________főoldal-indexpage________________________________________________________________________________*/
 .index-page{
@@ -328,7 +330,10 @@
 }
 .btn:hover {
     background:var(--blue-backroundcolor);
+
 }
+
+
 .links {
     line-height: 2;
     text-align: left;
@@ -428,8 +433,64 @@
     animation-duration: 5s;
 }
 @keyframes example {
-    from {color: whitesmoke;
+    from {color: lightblue;
         font-size: var(--p-size)}
     to {color: var(--blue);
-        font-size: var(--h2)}
+        font-size: 23px}
+}
+
+@media screen and (max-width:1740px) {
+    /*-------------------navbar---------------*/
+    .navbar-wrapper{
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+
+    }
+    /*-------------------problémák---------------*/
+
+    .problem-box{
+        width: 30%;
+        margin: auto;
+        display: grid;
+        justify-self: center;
+
+    }
+    .problem-box-position{
+        margin: auto;
+
+    }
+    /*-------------------árak---------------*/
+
+    .arak-page{
+        width: 55%;
+        margin: auto;
+    }
+}
+@media screen and (max-width:1320px) {
+    /*-------------------navbar---------------*/
+    .navbar-title{
+        font-size: calc(var(--navbar-title-font-size)*0.7);
+
+    }
+    .menu-link{
+        font-size: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
+        line-height: 90px;
+    }
+    /*-------------------problémák---------------*/
+
+    .problem-box{
+        width: 40%;
+
+    }
+    /*-------------------árak---------------*/
+
+    .arak-page{
+        width: 70%;
+        margin: auto;
+    }
+}
+@media screen and (max-width:980px) {
+
 }
