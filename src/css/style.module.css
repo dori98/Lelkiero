@@ -161,6 +161,44 @@
     align-self: center;
     justify-self: end;
 }
+.navbar-menu{
+    display: none;
+    display: grid;
+    align-self: center;
+    justify-self: end;
+    align-self: stretch;
+    align-self: center;
+    text-align: center;
+    padding-right: 20px;
+}
+.navbar-menu-button{
+    background-color: rgba(93,154,6,0.1) ;
+    border: none;
+    display: none;
+
+}
+.dropdown-content {
+    display: none;
+    width:100%;
+    position: fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    top:0px;
+    z-index: 5;
+    line-height: 2.2;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px black;
+}
+.open-menu {
+    display: block !important;
+}
+.close--button{
+    margin: 20px;
+    font-size: 20px;
+    align-self: end;
+
+}
 
 .menu-link{
     color: black;
@@ -492,5 +530,55 @@
     }
 }
 @media screen and (max-width:980px) {
+    /*---------------menu----------------*/
+    .navbar-links{
+        display: none;
+    }
+    .navbar-menu{
+        display: grid;
 
+    }
+    .navbar-menu-button{
+
+        display: grid;
+
+    }
+    /*---------------bemutatkozas----------------*/
+
+    .index-p{
+        line-height: 1.5;
+        width: 80%;
+    }
+    /*---------------problemak----------------------*/
+
+    .problem-box{
+        width: 50%;
+    }
+    /*-----------------arak----------------------*/
+    .arak-page{
+        width: 85%;
+        margin: auto;
+    }
+    .arak-h3{
+        width: 90%;
+        margin: auto;
+    }
+    /*--------------------elerhetosegek--------------------*/
+    .contacts-position{
+        width: 80%;
+    }
 }
+@media screen and (max-width:480px) {
+    /*--------------------főoldal--------------------*/
+    .index-p{
+
+        font-size: calc(var(--p-size)*0.8);
+
+    }
+    /*---------------problemak----------------------*/
+
+    .problem-box{
+        width: 80%;
+    }
+}
+

@@ -1,11 +1,19 @@
 import React, {useEffect, useState} from 'react'
 import * as style from "../css/style.module.css"
 import {Link} from "gatsby";
+import {AiOutlineMenu, FaTimes} from "react-icons/all";
 
 
 const Navbar = () => {
 
     const [scrollDir, setScrollDir] = useState("")
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen)
+    }
+    const toLink = () => {
+        setIsOpen(false)
+    }
 
     useEffect(() => {
         const threshold = 5
@@ -65,6 +73,25 @@ const Navbar = () => {
                     <Link to="#elerhetoseg"><h2 className={style.menuLink}>Elérhetőség</h2></Link>
                 </div>
             </div>
+            <div className={style.navbarMenu}>
+                <button className={style.navbarMenuButton} onClick={() => toggleSidebar()}>
+                    <AiOutlineMenu />
+                </button>
+                <div className={!isOpen ? `${style.dropdownContent}` : `${style.dropdownContent} ${style.openMenu}`}>
+                    <button onClick={() => toggleSidebar()} className={style.closeButton}>
+                        <FaTimes/>
+                    </button>
+                        <Link to="#bemutatkozas" onClick={() => toLink()}><h2 className={style.menuLink}>Bemutatkozás</h2></Link>
+                        <Link to="#arak" onClick={() => toLink()}><h2 className={style.menuLink}>Árak</h2></Link>
+                        <Link to="#idoponkeres" onClick={() => toLink()}><h2 className={style.menuLink}>Időpontkérés</h2></Link>
+
+                        <Link to="#videok" onClick={() => toLink()}><h2 className={style.menuLink}>Videók</h2></Link>
+                        <Link to="#ajanlottirodalom" onClick={() => toLink()}><h2 className={style.menuLink}>Ajánlott irodalom</h2></Link>
+                        <Link to="#elerhetoseg" onClick={() => toLink()}><h2 className={style.menuLink}>Elérhetőség</h2></Link>
+
+                </div>
+            </div>
+
         </navbar>
 
     )
