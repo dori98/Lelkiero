@@ -9,12 +9,19 @@ import Problemak from './Problemak'
 import AjanlottIrodalom from './AjanlottIrodalom'
 import Arak from './Arak'
 import Elerhetoseg from './Elerhetoseg'
+import Image from "gatsby-image";
 
 const Index = () => {
     const data = useStaticQuery(graphql`
     {
-    allContentfulBemutatkozas {
+    allContentfulBemutatkozas(filter: {lang: {eq: true}}) {
       nodes {
+      fenykep {
+          fluid {
+             ...GatsbyContentfulFluid
+
+          }
+        }
         szoveg {
           szoveg
           id
@@ -33,14 +40,12 @@ const Index = () => {
                     <h1 className={style.indexH1} id="bemutatkozas">Dr. Laczkó Katalin</h1>
                     <h2 className={style.indexH2}>gyermek- és ifjúsági pszichiáter szakorvos, család- és
                         párterapeuta</h2>
-                    <div className={style.indexImg}>
-                        <img src={icon} alt="icon" width="200" height="250" className={style.img}/>
 
-                    </div>
                     <div>
                         {bemutatkozas.map(b => {
                             return (
                                 <div key={b.id}>
+                                    <Image fluid={b.fenykep.fluid} className={style.indexImg}/>
                                     <p className={style.indexP}> {b.szoveg.szoveg}</p>
                                 </div>
                             )

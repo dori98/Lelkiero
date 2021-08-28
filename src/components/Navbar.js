@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import * as style from "../css/style.module.css"
 import {Link} from "gatsby";
 import {AiOutlineMenu, FaTimes} from "react-icons/all";
-
+import logo from '../assets/logo1.png'
 
 const Navbar = () => {
 
@@ -51,7 +51,11 @@ const Navbar = () => {
 
     return (
         <navbar className={style.navbarWrapper} id="headerNavigation">
-            <h1 className={style.navbarTitle}>Lelkierő</h1>
+            <div className={style.navbarLogoTitle}>
+                <img src={logo} alt="logo" className={style.navbarLogo}/>
+                <h1 className={style.navbarTitle}>Lelkierő</h1>
+            </div>
+
             <div className={style.navbarLinks}>
                 <div className={style.menuItem}>
                     <Link to="#bemutatkozas"><h2 className={style.menuLink}>Bemutatkozás</h2></Link>
@@ -71,6 +75,9 @@ const Navbar = () => {
                 </div>
                 <div className={style.menuItem}>
                     <Link to="#elerhetoseg"><h2 className={style.menuLink}>Elérhetőség</h2></Link>
+                </div>
+                <div>
+                    <button className={style.menuButton}>HU</button>|<button className={style.menuButton}>EN</button>
                 </div>
             </div>
             <div className={style.navbarMenu}>

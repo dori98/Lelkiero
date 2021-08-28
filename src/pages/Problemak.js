@@ -5,7 +5,7 @@ import * as style from "../css/style.module.css";
 const Problemak = () => {
     const data = useStaticQuery(graphql`
    {
-    allContentfulProblemakAmibenSegitsegetNyujthatok {
+    allContentfulProblemakAmibenSegitsegetNyujthatok(filter: {lang: {eq: true}}) {
       nodes {
         id
         problema

@@ -130,10 +130,13 @@
     padding-top: 10px;
 }
 /*___________________________________________________________________________navbar________________________________________________________________________________*/
-
+.navbar--logo{
+    width: 105px;
+    margin-left: 20px;
+}
 .navbar-wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     background: var(--blue-backroundcolor);
     position: fixed;
     height: 100px;
@@ -142,6 +145,10 @@
     margin-top: 0px;
     transition: margin-top 0.2s ease-out;
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.6);
+}
+.navbar-logo-title{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr ;
 }
 
 .menu-item{
@@ -207,11 +214,24 @@
     padding-right: 15px;
     line-height: 90px;
 }
+.menu-button{
+    color: black;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 90px;
+    border:none;
+    background-color: rgb(1,1,1,0);
+    cursor: pointer;
 
+}
+.menu-button:hover{
+    color: var(--title-color);
+}
 .navbar-title{
     font-size: var(--navbar-title-font-size);
     align-self: center;
-    padding-left: 120px;
+    padding-left: 20px;
     letter-spacing: 4px;
     color: var(--blue);
 }
@@ -226,6 +246,7 @@
     width: 60%;
     margin:auto;
     text-align: justify;
+    padding-top: 20px;
 }
 .index-h1{
     font-size: var(--h1) ;
@@ -237,16 +258,18 @@
 .index-h2{
     font-size: var(--h2) ;
     text-align: center;
+    padding-bottom: 20px;
+
 }
 .index-img{
+    width: 200px;
     display: grid;
     align-self: center;
     justify-self: center;
     margin:auto;
+    box-shadow: 5px 5px 10px 6px darkgrey;
 }
-.img{
-    margin: auto;
-}
+
 .index-list{
     padding-left: 40px;
 }
@@ -530,30 +553,31 @@
     }
 }
 @media screen and (max-width:980px) {
+    :root {
+        --p-size: 16px;
+    }
     /*---------------menu----------------*/
     .navbar-links{
         display: none;
     }
     .navbar-menu{
         display: grid;
-
     }
     .navbar-menu-button{
-
         display: grid;
-
     }
-    /*---------------bemutatkozas----------------*/
 
+    /*---------------bemutatkozas----------------*/
     .index-p{
         line-height: 1.5;
         width: 80%;
     }
-    /*---------------problemak----------------------*/
 
+    /*---------------problemak----------------------*/
     .problem-box{
         width: 50%;
     }
+
     /*-----------------arak----------------------*/
     .arak-page{
         width: 85%;
@@ -563,22 +587,23 @@
         width: 90%;
         margin: auto;
     }
+
     /*--------------------elerhetosegek--------------------*/
     .contacts-position{
         width: 80%;
     }
 }
 @media screen and (max-width:480px) {
-    /*--------------------főoldal--------------------*/
-    .index-p{
-
-        font-size: calc(var(--p-size)*0.8);
-
+    :root {
+        --p-size: 14px;
+        --h1: 30px;
+        --h2: 20px;
+        --h3: 16px;
     }
     /*---------------problemak----------------------*/
-
     .problem-box{
         width: 80%;
     }
+
 }
 
