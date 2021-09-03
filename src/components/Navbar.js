@@ -108,7 +108,11 @@ const Navbar = (lang, setLang) => {
                     </Link>
                     <Link to="#elerhetoseg" onClick={() => toLink()}><h2
                         className={style.menuLink}>{lang.lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
-
+                    <div>
+                        <button onClick={() => setLang()} className={style.menuButton}>HU</button>
+                        |
+                        <button onClick={() => setLang()} className={style.menuButton}>EN</button>
+                    </div>
                 </div>
             </div>
 
