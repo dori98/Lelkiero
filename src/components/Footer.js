@@ -1,10 +1,9 @@
 import React from 'react'
-import {graphql, Link, useStaticQuery} from "gatsby"
 
 import * as style from "../css/style.module.css"
 
 const Footer = () => {
-
+/*
     const data = useStaticQuery(graphql`
     {
       allContentfulElerhetoseg {
@@ -17,11 +16,9 @@ const Footer = () => {
         }
       }
     }
-  `)
+  `)*/
 
-    const{
-        allContentfulElerhetoseg:{nodes:elerhetoseg}
-    }=data
+
     return(
         <footer>
             <div className={style.footerDiv}>
@@ -33,7 +30,12 @@ const Footer = () => {
     )
 }
 export default Footer
-/*{elerhetoseg.map(e => {
+/*
+ const{
+        allContentfulElerhetoseg:{nodes:elerhetoseg}
+    }=data
+
+{elerhetoseg.map(e => {
                     return(
                         <div key={e.id} className={style.footerP}>
                             <h2 className={style.footerH2}>{e.nev}</h2>

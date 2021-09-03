@@ -9,7 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const Form = () => {
+const Form = ({lang}) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -27,17 +27,18 @@ const Form = () => {
         <>
             <section className={styles.contactPage}>
                 <article className={styles.contactForm}>
-                    <h1>Időpontkérés</h1>
-                    <p> Ha nem járt még nálam konzultáción akkor töltse ki az alábbi formot és mi felvesszük Önnel a kapcsolatot és egyeztetünk konzultációs időpontot.
+                    <h1>{lang === "HU" ? "Időpontkérés" : "Appointment form"}</h1>
+                    <p>{lang === "HU" ? "Ha nem járt még nálam konzultáción akkor töltse ki az alábbi formot és mi felvesszük Önnel a kapcsolatot és egyeztetünk konzultációs időpontot." :
+                        "If you have not been to a consultation with me yet, fill in the form below and we will contact you and arrange a consultation date."}
                     </p>
-                    <p>Ha előzőleg járt más orvosnál kérem a vizsgálat eredményét küldje el az alábbi email címre: info1katalin@gmail.com
+                    <p>{lang === "HU" ? "Ha előzőleg járt más orvosnál kérem a vizsgálat eredményét küldje el az alábbi email címre: info1katalin@gmail.com" : "If you have previously visited another doctor, please send the results of the examination to the following email address: info1katalin@gmail.com"}
                     </p>
                     <form >
                         <div className={styles.formGroup}>
                             <input
                                 type="name"
                                 name="name"
-                                placeholder="Név"
+                                placeholder={lang === "HU" ? "Név" : "Name"}
                                 required={true}
                                 className={styles.formControl}
                             />
@@ -51,31 +52,25 @@ const Form = () => {
                             <input
                                 type="tel"
                                 name="phoneNumber"
-                                placeholder="telefonszám (+36701234567)"
+                                placeholder={lang === "HU" ? "Telefonszám" : "Phone number"}
                                 required={true}
                                 maxLength={12}
                                 className={styles.formControl}
                             />
-                            <div className={styles.formP}>Kérem válassza ki milyen problémája van:</div>
+                            <div className={styles.formP}>{lang === "HU" ? "Kérem válassza ki milyen problémája van" :  "Please select what problem you have"}:</div>
                             <div className={styles.inputlabel}>
                                 <input type="checkbox" id="vizsgalat" name="vizsgalat" value="vizsgalat" />
-                                <label htmlFor="vvizsgalat" > Vizsgálat (18 éves korig)</label><br/>
+                                <label htmlFor="vvizsgalat" >{lang === "HU" ? "Vizsgálat (18 éves korig)" : "Examination (up to 18 years)"} </label><br/>
                             </div>
                             <div className={styles.inputlabel}>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"/>
-                                <label htmlFor="vehicle2"> Családterápia</label><br/>
+                                <input type="checkbox" id="csaladterapia" name="csaladterapia" value="csalad"/>
+                                <label htmlFor="csaladterapia"> {lang === "HU" ? "Családterápia" :  "Family therapy"}</label><br/>
                             </div>
                             <div className={styles.inputlabel}>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                                <label htmlFor="vehicle3"> Párterápia</label><br/>
+                                <input type="checkbox" id="parterapia" name="parterapia" value="par"/>
+                                <label htmlFor="parterapia"> {lang === "HU" ? "Párterápia" : "Couple therapy"}</label><br/>
                             </div>
-
-
-
-
                             <div className={styles.links}>
-
-
                             </div>
                             <div>
                                 <Button
@@ -85,7 +80,7 @@ const Form = () => {
                                         border:"none"
                                     }}
                                 >
-                                    Az adatvédelmi nyilatkozatot elfogadom
+                                    {lang === "HU" ? "Az adatvédelmi nyilatkozatot elfogadom" : "I accept the privacy statement"}
                                 </Button>
                                 <Dialog
                                     open={open}
@@ -115,7 +110,7 @@ const Form = () => {
 
                             </div>
                             <button type="submit" className={`${styles.submitBtn} ${styles.btn}`}>
-                                Küldés
+                                {lang === "HU" ? "Küldés" : "Submit"}
                             </button>
                         </div>
                     </form>

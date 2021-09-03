@@ -1,11 +1,11 @@
 import * as React from "react"
 import Layout from "../components/Layout"
 import * as style from "../css/style.module.css";
-import {graphql, Link} from "gatsby"
+import { Link} from "gatsby"
 
 
 // markup
-const NotFoundPage = () => {
+const NotFoundPage = ({lang}) => {
   return (
      <Layout>
        <div className={style.fullpage}>

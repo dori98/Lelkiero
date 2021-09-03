@@ -4,8 +4,8 @@ import {Link} from "gatsby";
 import {AiOutlineMenu, FaTimes} from "react-icons/all";
 import logo from '../assets/logo1.png'
 
-const Navbar = () => {
-
+const Navbar = (lang, setLang) => {
+    console.log(lang.lang)
     const [scrollDir, setScrollDir] = useState("")
     const [isOpen, setIsOpen] = useState(false)
     const toggleSidebar = () => {
@@ -50,7 +50,7 @@ const Navbar = () => {
     }, [scrollDir]);
 
     return (
-        <navbar className={style.navbarWrapper} id="headerNavigation">
+        <nav className={style.navbarWrapper} id="headerNavigation" >
             <div className={style.navbarLogoTitle}>
                 <img src={logo} alt="logo" className={style.navbarLogo}/>
                 <h1 className={style.navbarTitle}>Lelkierő</h1>
@@ -58,48 +58,61 @@ const Navbar = () => {
 
             <div className={style.navbarLinks}>
                 <div className={style.menuItem}>
-                    <Link to="#bemutatkozas"><h2 className={style.menuLink}>Bemutatkozás</h2></Link>
+                    <Link to="#bemutatkozas"><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Bemutatkozás" : "Missing"}</h2></Link>
                 </div>
                 <div className={style.menuItem}>
-                    <Link to="#arak"><h2 className={style.menuLink}>Árak</h2></Link>
+                    <Link to="#arak"><h2 className={style.menuLink}>{lang.lang === "HU" ? "Árak" : "Prices"}</h2></Link>
                 </div>
                 <div className={style.menuItem}>
-                    <Link to="#idoponkeres"><h2 className={style.menuLink}>Időpontkérés</h2></Link>
+                    <Link to="#idoponkeres"><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Időpontkérés" : "Appointment form"}</h2></Link>
                 </div>
 
                 <div className={style.menuItem}>
-                    <Link to="#videok"><h2 className={style.menuLink}>Videók</h2></Link>
+                    <Link to="#videok"><h2 className={style.menuLink}>{lang.lang === "HU" ? "Videók" : "Videos"}</h2></Link>
                 </div>
                 <div className={style.menuItem}>
-                    <Link to="#ajanlottirodalom"><h2 className={style.menuLink}>Ajánlott irodalom</h2></Link>
+                    <Link to="#ajanlottirodalom"><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Ajánlott irodalmak" : "Recommended literature"}</h2>
+                    </Link>
                 </div>
                 <div className={style.menuItem}>
-                    <Link to="#elerhetoseg"><h2 className={style.menuLink}>Elérhetőség</h2></Link>
+                    <Link to="#elerhetoseg"><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
                 </div>
                 <div>
-                    <button className={style.menuButton}>HU</button>|<button className={style.menuButton}>EN</button>
+                    <button onClick={() => setLang()} className={style.menuButton}>HU</button>
+                    |
+                    <button onClick={() => setLang()} className={style.menuButton}>EN</button>
                 </div>
             </div>
             <div className={style.navbarMenu}>
                 <button className={style.navbarMenuButton} onClick={() => toggleSidebar()}>
-                    <AiOutlineMenu />
+                    <AiOutlineMenu/>
                 </button>
                 <div className={!isOpen ? `${style.dropdownContent}` : `${style.dropdownContent} ${style.openMenu}`}>
                     <button onClick={() => toggleSidebar()} className={style.closeButton}>
                         <FaTimes/>
                     </button>
-                        <Link to="#bemutatkozas" onClick={() => toLink()}><h2 className={style.menuLink}>Bemutatkozás</h2></Link>
-                        <Link to="#arak" onClick={() => toLink()}><h2 className={style.menuLink}>Árak</h2></Link>
-                        <Link to="#idoponkeres" onClick={() => toLink()}><h2 className={style.menuLink}>Időpontkérés</h2></Link>
-
-                        <Link to="#videok" onClick={() => toLink()}><h2 className={style.menuLink}>Videók</h2></Link>
-                        <Link to="#ajanlottirodalom" onClick={() => toLink()}><h2 className={style.menuLink}>Ajánlott irodalom</h2></Link>
-                        <Link to="#elerhetoseg" onClick={() => toLink()}><h2 className={style.menuLink}>Elérhetőség</h2></Link>
+                    <Link to="#bemutatkozas" onClick={() => toLink()}><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Bemutatkozás" : "Missing"}</h2></Link>
+                    <Link to="#arak" onClick={() => toLink()}><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Árak" : "Prices"}</h2></Link>
+                    <Link to="#idoponkeres" onClick={() => toLink()}><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Időpontkérés" : "Appointment form"}</h2></Link>
+                    <Link to="#videok" onClick={() => toLink()}><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Videók" : "Videos"}</h2></Link>
+                    <Link to="#ajanlottirodalom" onClick={() => toLink()}><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Ajánlott irodalmak" : "Recommended literature"}</h2>
+                    </Link>
+                    <Link to="#elerhetoseg" onClick={() => toLink()}><h2
+                        className={style.menuLink}>{lang.lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
 
                 </div>
             </div>
 
-        </navbar>
+        </nav>
 
     )
 }
