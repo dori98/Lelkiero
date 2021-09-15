@@ -28,10 +28,10 @@ const Form = ({lang}) => {
             <section className={styles.contactPage}>
                 <article className={styles.contactForm}>
                     <h1>{lang === "HU" ? "Időpontkérés" : "Appointment form"}</h1>
-                    <p>{lang === "HU" ? "Ha nem járt még nálam konzultáción akkor töltse ki az alábbi formot és mi felvesszük Önnel a kapcsolatot és egyeztetünk konzultációs időpontot." :
-                        "If you have not been to a consultation with me yet, fill in the form below and we will contact you and arrange a consultation date."}
+                    <p>{lang === "HU" ? "Ha nem járt még nálam konzultáción, kérem, töltse ki az alábbi Űrlapot. Ezt követően rövid időn belül felveszem Önnel a kapcsolatot. Konzultációs időpontot emailben egyeztetünk." :
+                        "In case this is your first appointment, please fill in the form below. I will contact you within a week via email to arrange an appointment."}
                     </p>
-                    <p>{lang === "HU" ? "Ha előzőleg járt más orvosnál kérem a vizsgálat eredményét küldje el az alábbi email címre: info1katalin@gmail.com" : "If you have previously visited another doctor, please send the results of the examination to the following email address: info1katalin@gmail.com"}
+                    <p>{lang === "HU" ? "Ha előzőleg járt más szakembernél, kérem a korábbi szakvéleményeket szkennelve küldje meg részemre az alábbi email címre: info1katalin@gmail.com" : "In case you have been seen by other professionals please forward previous  reports scanned to the following email address: info1katalin@gmail.com"}
                     </p>
                     <form >
                         <div className={styles.formGroup}>
@@ -57,10 +57,12 @@ const Form = ({lang}) => {
                                 maxLength={12}
                                 className={styles.formControl}
                             />
+
+
                             <div className={styles.formP}>{lang === "HU" ? "Kérem válassza ki milyen problémája van" :  "Please select what problem you have"}:</div>
                             <div className={styles.inputlabel}>
                                 <input type="checkbox" id="vizsgalat" name="vizsgalat" value="vizsgalat" />
-                                <label htmlFor="vvizsgalat" >{lang === "HU" ? "Vizsgálat (18 éves korig)" : "Examination (up to 18 years)"} </label><br/>
+                                <label htmlFor="vvizsgalat" >{lang === "HU" ? "Vizsgálat (18 éves korig)" : "Assasment (up to 18 years)"} </label><br/>
                             </div>
                             <div className={styles.inputlabel}>
                                 <input type="checkbox" id="csaladterapia" name="csaladterapia" value="csalad"/>
@@ -68,8 +70,18 @@ const Form = ({lang}) => {
                             </div>
                             <div className={styles.inputlabel}>
                                 <input type="checkbox" id="parterapia" name="parterapia" value="par"/>
-                                <label htmlFor="parterapia"> {lang === "HU" ? "Párterápia" : "Couple therapy"}</label><br/>
+                                <label htmlFor="parterapia"> {lang === "HU" ? "Párterápia" : "Couple counselling"}</label><br/>
                             </div>
+                            <textarea
+                                rows="4"
+                                cols="50"
+                                name="comment"
+                                form="usrform"
+                                placeholder={lang === "HU" ? "Miben kérnek segítséget?"
+                                     : "How can I help you?"}
+                                className={styles.formControl}
+                            />
+
                             <div className={styles.links}>
                             </div>
                             <div>
@@ -107,6 +119,7 @@ const Form = ({lang}) => {
                                     onChange={handleChange}
                                     required={true}
                                 />
+
 
                             </div>
                             <button type="submit" className={`${styles.submitBtn} ${styles.btn}`}>

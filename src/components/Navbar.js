@@ -4,8 +4,8 @@ import {Link} from "gatsby";
 import {AiOutlineMenu, FaTimes} from "react-icons/all";
 import logo from '../assets/logo1.png'
 
-const Navbar = (lang, setLang) => {
-    console.log(lang.lang)
+const Navbar = ({lang, setLang}) => {
+
     const [scrollDir, setScrollDir] = useState("")
     const [isOpen, setIsOpen] = useState(false)
     const toggleSidebar = () => {
@@ -50,7 +50,7 @@ const Navbar = (lang, setLang) => {
     }, [scrollDir]);
 
     return (
-        <nav className={style.navbarWrapper} id="headerNavigation" >
+        <nav className={style.navbarWrapper} id="headerNavigation">
             <div className={style.navbarLogoTitle}>
                 <img src={logo} alt="logo" className={style.navbarLogo}/>
                 <h1 className={style.navbarTitle}>Lelkierő</h1>
@@ -59,32 +59,34 @@ const Navbar = (lang, setLang) => {
             <div className={style.navbarLinks}>
                 <div className={style.menuItem}>
                     <Link to="#bemutatkozas"><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Bemutatkozás" : "Missing"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Bemutatkozás" : "About me"}</h2></Link>
                 </div>
                 <div className={style.menuItem}>
-                    <Link to="#arak"><h2 className={style.menuLink}>{lang.lang === "HU" ? "Árak" : "Prices"}</h2></Link>
+                    <Link to="#arak"><h2 className={style.menuLink}>{lang === "HU" ? "Árak" : "Prices"}</h2></Link>
                 </div>
                 <div className={style.menuItem}>
                     <Link to="#idoponkeres"><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Időpontkérés" : "Appointment form"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Időpontkérés" : "Appointment form"}</h2>
+                    </Link>
                 </div>
 
                 <div className={style.menuItem}>
-                    <Link to="#videok"><h2 className={style.menuLink}>{lang.lang === "HU" ? "Videók" : "Videos"}</h2></Link>
+                    <Link to="#videok"><h2 className={style.menuLink}>{lang === "HU" ? "Videók" : "Videos"}</h2>
+                    </Link>
                 </div>
                 <div className={style.menuItem}>
                     <Link to="#ajanlottirodalom"><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Ajánlott irodalmak" : "Recommended literature"}</h2>
+                        className={style.menuLink}>{lang === "HU" ? "Ajánlott irodalmak" : "Recommended literature"}</h2>
                     </Link>
                 </div>
                 <div className={style.menuItem}>
                     <Link to="#elerhetoseg"><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
                 </div>
                 <div>
-                    <button onClick={() => setLang()} className={style.menuButton}>HU</button>
+                    <button onClick={() => setLang() } disabled={lang==="HU"} className={style.menuButton}  >HU</button>
                     |
-                    <button onClick={() => setLang()} className={style.menuButton}>EN</button>
+                    <button onClick={() => setLang()} disabled={lang==="EN"} className={style.menuButton} >EN</button>
                 </div>
             </div>
             <div className={style.navbarMenu}>
@@ -96,26 +98,26 @@ const Navbar = (lang, setLang) => {
                         <FaTimes/>
                     </button>
                     <Link to="#bemutatkozas" onClick={() => toLink()}><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Bemutatkozás" : "Missing"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Bemutatkozás" : "About me"}</h2></Link>
                     <Link to="#arak" onClick={() => toLink()}><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Árak" : "Prices"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Árak" : "Prices"}</h2></Link>
                     <Link to="#idoponkeres" onClick={() => toLink()}><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Időpontkérés" : "Appointment form"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Időpontkérés" : "Appointment form"}</h2>
+                    </Link>
                     <Link to="#videok" onClick={() => toLink()}><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Videók" : "Videos"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Videók" : "Videos"}</h2></Link>
                     <Link to="#ajanlottirodalom" onClick={() => toLink()}><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Ajánlott irodalmak" : "Recommended literature"}</h2>
+                        className={style.menuLink}>{lang === "HU" ? "Ajánlott irodalmak" : "Recommended literature"}</h2>
                     </Link>
                     <Link to="#elerhetoseg" onClick={() => toLink()}><h2
-                        className={style.menuLink}>{lang.lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
+                        className={style.menuLink}>{lang === "HU" ? "Elérhetőség" : "Contacts"}</h2></Link>
                     <div>
-                        <button onClick={() => setLang()} className={style.menuButton}>HU</button>
+                        <button onClick={() => setLang()} disabled={lang==="HU"} className={style.menuButton}>HU</button>
                         |
-                        <button onClick={() => setLang()} className={style.menuButton}>EN</button>
+                        <button onClick={() => setLang()} disabled={lang==="EN"} className={style.menuButton}>EN</button>
                     </div>
                 </div>
             </div>
-
         </nav>
 
     )

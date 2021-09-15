@@ -231,6 +231,18 @@
     cursor: pointer;
 
 }
+.menu-button:disabled{
+    color: var(--blue);
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 90px;
+    border:none;
+    background-color: rgb(1,1,1,0);
+
+}
+
+
 .menu-button:hover{
     color: var(--title-color);
 }
@@ -636,6 +648,22 @@
     /*---------------problemak----------------------*/
     .problem-box{
         width: 80%;
+    }
+    /*---------------form----------------------*/
+
+    .contact-form {
+        background:  #fff;
+        border-radius: var(--radius);
+        text-align: center;
+        box-shadow: var(--light-shadow);
+        transition: var(--transition);
+        width: 92vw;
+        max-width: 35rem;
+        font-family: 'Libre Baskerville', serif;
+
+    }
+    .form-control {
+        width: 88%;
     }
 
 }

@@ -9,13 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             lang
           }
-        },
-        arak:allContentfulArak{
-        nodes {
-            lang
-          }
         }
-        
     }
   `)
     result.data.bemutatkozas.nodes.forEach(b => {
@@ -27,16 +21,5 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         })
     })
-    result.data.arak.nodes.forEach(b => {
-        createPage({
-            path: b.lang === "EN" ? `/en/` : `/`,
-            component: path.resolve(`src/templates/index-template.js`),
-            context: {
-                lang: b.lang,
-            },
-        })
-    })
-
-
 
 }

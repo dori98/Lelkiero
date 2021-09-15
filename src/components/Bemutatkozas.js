@@ -17,5 +17,4 @@ const Bemutatkozas = ({image, text, lang}) => {
         </div>
     )
 }
-
 export default Bemutatkozas

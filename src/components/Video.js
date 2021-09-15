@@ -14,7 +14,6 @@ const V = ({lang}) => {
     }
   }
   `)
-
     const {
         allContentfulVideo: {nodes: videos}
     } = data
@@ -41,7 +40,6 @@ const V = ({lang}) => {
                     })}
                 </div>
             </div>
-
         </>
     )
 }

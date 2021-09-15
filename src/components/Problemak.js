@@ -20,7 +20,6 @@ const Problemak = ({problem, lang}) => {
                     )
                 })}
             </div>
-
         </>
     )
 }
