@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: "My Gatsby Site",
@@ -9,7 +12,7 @@ module.exports = {
       options: {
         spaceId: `zvoljr72g0f1`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken:  `TekK8wUlNUNpYEVSJiqvsHb4IRtk3ll6-a-yK0ZTvSk`,
+        accessToken: process.env.ACCES_TOKEN  ,
       },
 
     },
